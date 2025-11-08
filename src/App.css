@@ -1,38 +1,137 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* ---------------------------------------------
+  CSS RESET 
+--------------------------------------------- */
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* 2. Remove default margin */
+* {
+  margin: 0;
 }
 
+/* 3. Enable keyword animations */
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  html {
+    interpolate-size: allow-keywords;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+
+/* ---------------------------------------------
+  App
+--------------------------------------------- */
+body {
+  background-color: #090e1f;
+  background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
+  color: white;
+
+  font-family: "Nunito", sans-serif;
+}
+
+/* Container May REMOVE FROM TODO*/
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center; /* remove to space container more */
+}
+
+/* conversation starter */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 1rem 0.1rem;
+}
+
+/* Question */
+.question__button {
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  
+}
+
+.question {
   align-items: center;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 30px;
+  min-height: 100px;
+  font-size: 24px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  border-radius: 12px;
+}
+
+
+/* Category */
+/* Add the active category being highlighted */
+.category__buttons button {
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.6);
+
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: all 0.2s;
+
+  margin: 5px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.category__buttons button.active {
+  background-color: #4CAF50;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.categoryDisplay {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
