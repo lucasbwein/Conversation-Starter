@@ -14,7 +14,7 @@ export default function App() {
   useEffect(() => {
     const intialQuestion = getRandomQuestion(category);
     setCurrentQuestion(intialQuestion);
-  }, []);
+  }, [category]);
 
   // generates random question from category
   function getRandomQuestion(category) {
