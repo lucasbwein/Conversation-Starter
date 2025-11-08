@@ -2,9 +2,9 @@
 import './App.css';
 import { questionData } from './questions';
 import { useEffect, useState } from 'react';
-import QuestionDisplay from './QuestionDisplay';
-import CategoryButtons from './CategoryButtons';
-import ShuffleButton from './ShuffleButton';
+// import QuestionDisplay from './QuestionDisplay';
+// import CategoryButtons from './CategoryButtons';
+// import ShuffleButton from './ShuffleButton';
 
 export default function App() {
   const [ currentQuestion, setCurrentQuestion ] = useState('');

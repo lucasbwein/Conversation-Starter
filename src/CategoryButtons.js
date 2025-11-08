@@ -1,14 +1,14 @@
-import React from "react";
-import { useEffect, useState } from "react";
+// import React from "react";
+// import { useEffect, useState } from "react";
 
-/* used to select category */
-export default function categoryButton({ category }) {
-    // const [shuffle, setShuffle] = useState([]);
+// /* used to select category */
+// export default function categoryButton({ category }) {
+//     // const [shuffle, setShuffle] = useState([]);
 
-    // useEffect(() => {
+//     // useEffect(() => {
 
-    // })
-    return (
-        <h2></h2>
-    )
-};
+//     // })
+//     return (
+//         <h2></h2>
+//     )
+// };
