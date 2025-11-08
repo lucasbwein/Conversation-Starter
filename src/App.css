@@ -83,7 +83,6 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 6px;
-  
 }
 
 .question {
@@ -116,9 +115,9 @@ body {
 
   margin: 5px;
 
-  &:hover {
+  /* &:hover {
     background-color: rgba(255, 255, 255, 0.7);
-  }
+  } */
 }
 
 .category__buttons button.active {
@@ -127,7 +126,7 @@ body {
 }
 
 .categoryDisplay {
-  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.8); */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
