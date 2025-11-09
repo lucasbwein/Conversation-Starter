@@ -2,6 +2,7 @@
 import './App.css';
 import { questionData } from './questions';
 import { useEffect, useState } from 'react';
+// Add for better layout later on
 // import QuestionDisplay from './QuestionDisplay';
 // import CategoryButtons from './CategoryButtons';
 // import ShuffleButton from './ShuffleButton';
@@ -25,7 +26,14 @@ export default function App() {
 
   // creates new question
   function shuffleQuestion() {
-    const newQuestion = getRandomQuestion(category);
+    let newQuestion = getRandomQuestion(category);
+
+    let attempts = 0;
+    let maxAttempts = 10;
+    while (newQuestion === currentQuestion && attempts < maxAttempts) {
+      newQuestion = getRandomQuestion(category);
+      attempts++;
+    }
     setCurrentQuestion(newQuestion);
   }
 
@@ -35,6 +43,12 @@ export default function App() {
     setCurrentQuestion(newQuestion);
   }
 
+  const categoryLabels = {
+    gettingToKnow: "Getting to know",
+    deep: "Deep",
+    creative: "Creative",
+    fun: "Fun",
+  };
 
 
   // Once everything works move displays to different .js, better to keep here for debugging for now
@@ -42,7 +56,7 @@ export default function App() {
     <main className="container">
       <h1 className="title">Random Questions</h1>
       <button className="question__button" onClick={ shuffleQuestion }>New Question</button>
-      <h2 className="question">{currentQuestion}</h2>
+      <h2 className="question" key={currentQuestion}>{currentQuestion}</h2>
       <div className="category__buttons">
         <button onClick={() => handleCategory("gettingToKnow")}
           className={category === "gettingToKnow" ? "active" : ""}
@@ -65,7 +79,7 @@ export default function App() {
           Fun
         </button>
       </div>
-      <p className="categoryDisplay">Current Category: {category}</p>
+      <p className="categoryDisplay">Current Category: { categoryLabels[category] }</p>
 
     </main>
   );
