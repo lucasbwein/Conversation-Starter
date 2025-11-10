@@ -58,7 +58,10 @@ export default function App() {
         {/* Random Questions */}
         Questions Worth Asking
       </h1>
-      <button className="question__button" onClick={ shuffleQuestion }>New Question</button>
+      <button className="question__button" onClick={ shuffleQuestion }>
+        Shuffle Question
+        {/* New Question ✨ */}
+      </button>
       <h2 className="question" key={currentQuestion}>{currentQuestion}</h2>
       <div className="category__buttons">
         <button onClick={() => handleCategory("gettingToKnow")}
@@ -84,7 +87,10 @@ export default function App() {
         {/* <p>Select Category above</p> */}
       </div>
       <p className="categoryDisplay">Current Category: { categoryLabels[category] }</p>
-
+      
+      <footer className="footer">
+        <p>Skip the small talk. Start real conversations.</p>
+      </footer>
     </main>
   );
 }
