@@ -44,7 +44,7 @@ export default function App() {
   }
 
   const categoryLabels = {
-    gettingToKnow: "Getting to know",
+    gettingToKnow: "Getting to Know",
     deep: "Deep",
     creative: "Creative",
     fun: "Fun",
@@ -54,7 +54,10 @@ export default function App() {
   // Once everything works move displays to different .js, better to keep here for debugging for now
   return (
     <main className="container">
-      <h1 className="title">Random Questions</h1>
+      <h1 className="title">
+        {/* Random Questions */}
+        Questions Worth Asking
+      </h1>
       <button className="question__button" onClick={ shuffleQuestion }>New Question</button>
       <h2 className="question" key={currentQuestion}>{currentQuestion}</h2>
       <div className="category__buttons">
@@ -78,6 +81,7 @@ export default function App() {
         >
           Fun
         </button>
+        {/* <p>Select Category above</p> */}
       </div>
       <p className="categoryDisplay">Current Category: { categoryLabels[category] }</p>
 
