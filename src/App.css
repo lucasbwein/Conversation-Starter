@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
   App
 --------------------------------------------- */
 html {
-  background: #0f172a; /* Match your darkest background color */
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
 }
 
 body {
