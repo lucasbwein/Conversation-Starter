@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* ---------------------------------------------
   CSS RESET 
@@ -56,51 +56,65 @@ h1, h2, h3, h4, h5, h6 {
   App
 --------------------------------------------- */
 body {
-  background-color: #090e1f;
-  background-image: url("https://www.transparenttextures.com/patterns/fake-brick.png");
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+  background-attachment: fixed;
   color: white;
-
-  font-family: "Nunito", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
-/* Container May REMOVE FROM TODO*/
+/* Container */
 .container {
-    max-width: 600px;
+    max-width: 650px;
+    width: 100%;
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 2rem;
     text-align: center; 
 }
 
 /* conversation starter */
 .title {
   text-align: center;
-  font-size: 2.5rem;
-  padding: 1.2rem 0.1rem;
-  /* background: linear-gradient(135def, #667eea 0%, #764ba2 100%);
+  font-size: 2.25rem;
+  font-weight: 700;
+  padding: 1rem 0;
+  /* background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #6366f1 100%); */
+  background: #818cf8;
   -webkit-background-clip: text;
-  /* -webkit-text-fill-color: transparent; */
-  /* background-clip: text; */ 
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
 }
 
 /* Question */
 .question__button {
+  background: linear-gradient(135deg, #667eea 0%, #4ba281 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
   border: none;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 0.3rem 0.7rem;
 
-  transition: scale 0.2s, background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s, scale 0.2s;
 } 
 .question__button:hover { 
-  background-color: rgba(255, 255, 255, 0.9); 
-  scale: 1.02;
-  /* transform: translateY(-2px); */
-  box-shadow: 0 0 15px rgba(102, 126, 234, 0.8);
+  /* background-color: rgba(255, 255, 255, 0.9);  */
+  /* scale: 1.02; */
+  transform: translateY(-2px);
+  /* box-shadow: 0 0 15px rgba(102, 126, 234, 0.8); */
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.question__button:active {
+  scale: 1;
+  transform: translateY(0);
 }
 
 .question {
@@ -108,124 +122,142 @@ body {
   display: flex;
   justify-content: center;
 
-  /* padding: 30px; */
-  padding: 1.2rem 1rem;
-  /* min-height: 100px; */
-  min-height: 150px;
-  font-size: 28px;
-
+  padding: 2rem 1.5rem;
+  min-height: 160px;
+  font-size: 1.5rem;
   font-weight: 600; /* boldness */
-
-  margin: 1.2rem 0;
+  margin: 1.5rem 0;
   
-  /* background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-  backdrop-filter: blur(10px); */
-  /* border: 1px solid rgba(255, 255, 255, 0.2); */
-
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-
-  /* animation: fadeIn 0.5s ease-in; */
-  box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.3),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-  animation: fadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.5s ease-out;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px) scale(0.95);
+    transform: translateY(20px);
   } 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 
 /* Category */
-/* Add the active category being highlighted */
+.category__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+}
+
 .category__buttons button {
-  border: none;
-  border-radius: 6px;
-  background-color: rgba(255, 255, 255, 0.6);
-
-  align-items: center;
-  padding: 0.5rem 1rem;
-  font-size: 16px;
-
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.625rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s;
-
-  /* margin: 0 5px; */
-  margin: 0 5px;
+  transition: all 0.2s;
 }
 .category__buttons button:hover {
-  background-color: rgba(255, 255, 255, 0.7);
-  scale: 1.04;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.2);
+  /* scale: 1.04; */
 }
 
 .category__buttons button.active {
-  background-color: #4CAF50;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   color: white;
   border-color: transparent;
 }
 .category__buttons button.active:hover {
-  background-color: rgba(76, 175, 80, 0.9);
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
 }
 
 .categoryDisplay {
-  /* background-color: rgba(255, 255, 255, 0.8); */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0.5rem;
+  display: none;
 }
 
 .footer {
-  display: fixed;
-  margin-top: 6rem;
-  padding-top: 1.2rem;
+  margin-top: 4rem;
+  padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  opacity: 0.6;
-  font-size: 0.8rem;
-  font-style: italic;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+/* ---------------------------------------------
+  Mobile
+--------------------------------------------- */
+@media (max-width: 640px) {
+  body {
+    padding: 0.75rem;
+  }
+
   .container {
     padding: 1.5rem 1rem;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    padding: 0.75rem 0;
   }
 
   .question {
     font-size: 1.25rem;
-    padding: 2rem 1.5rem;
-    min-height: 120px;
+    padding: 1.5rem 1.25rem;
+    min-height: 140px;
+    border-radius: 12px;
   }
-  
+
   .question__button {
     padding: 0.875rem 2rem;
     font-size: 1rem;
-  }
-  
-  .category__buttons button {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
   }
 
-  .question__button:active,
-  .category__buttons button:active,
-  .question__button:hover,
-  .category__buttons:hover {
-    scale: 1 !important;
+  .category__buttons {
+    gap: 0.5rem;
+  }
+
+  .category__buttons button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    min-height: 44px;
+  }
+
+  .footer {
+    margin-top: 3rem;
+  }
+}
+
+/* Ensures it doesn't infinitly hover on mobile */
+@media (hover: none) {
+  .question__button:hover {
+    transform: none;
     box-shadow: none;
+  }
+
+  .category__buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border-color: transparent;
+  }
+
+  .category__buttons button.active:hover {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
   }
 }

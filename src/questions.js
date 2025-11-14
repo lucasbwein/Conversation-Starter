@@ -54,7 +54,7 @@ export const questionData = {
         "What's your most irrational fear?",
         "If you could be any age forever, what age would you choose?",
         "What's the weirdest compliment you've ever received?",
-        "If you were a character in a video game, what would your special ability be?",
+        "If you were a character in a show, what would your special ability be?",
         "What's something that always makes you laugh?",
         "If you could instantly become an expert in any hobby, what would it be?",
     ],
