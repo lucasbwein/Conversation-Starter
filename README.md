@@ -3,7 +3,7 @@
 Nobody likes small talk.
 Asking the questions that matter. Learning to go deeper and start real conversation.
 
-Live Here: https://conversation-starter-two.vercel.app
+Live Here: https://authentic-conversation-starter.vercel.app
 
 ## Overview
 This is a React app that provides the user with thoughtful questions to help authentic conversation.

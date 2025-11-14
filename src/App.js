@@ -2,7 +2,6 @@
 import './App.css';
 import { questionData } from './questions';
 import { useEffect, useState } from 'react';
-// Add for better layout later on
 // import QuestionDisplay from './QuestionDisplay';
 // import CategoryButtons from './CategoryButtons';
 // import ShuffleButton from './ShuffleButton';
@@ -37,6 +36,7 @@ export default function App() {
     setCurrentQuestion(newQuestion);
   }
 
+  // For setting category
   function handleCategory(newCategory) {
     setCategory(newCategory);
     const newQuestion = getRandomQuestion(newCategory);
@@ -50,6 +50,7 @@ export default function App() {
     fun: "Fun",
   };
 
+// TODO add rating system and backend for storing
 
   // Once everything works move displays to different .js, better to keep here for debugging for now
   return (
